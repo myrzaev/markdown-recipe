@@ -2,7 +2,9 @@ package main
 
 import (
 	"log"
+	"log/slog"
 	"net/http"
+	"os"
 )
 
 func main() {
@@ -15,5 +17,11 @@ func main() {
 }
 
 func defaultOne(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Hello Shrey!"))
+	f, err := os.ReadFile("index.html")
+	if err != nil {
+		http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
+		slog.Error("failed to get index.html", "filename", "index.html")
+		return
+	}
+	w.Write(f)
 }
