@@ -1,25 +1,72 @@
-# If you prefer the allow list template instead of the deny list, see community template:
-# https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
-#
-# Binaries for programs and plugins
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
 
-# Test binary, built with `go test -c`
-*.test
+# Virtual Environment
+venv/
+env/
+*.env
+*.venv
+pip-log.txt
+pip-delete-this-directory.txt
 
-# Output of the go coverage tool, specifically when used with LiteIDE
-*.out
+# Django-specific
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+*.log
 
-# Dependency directories (remove the comment below to include it)
-# vendor/
-
-# Go workspace file
-go.work
-go.work.sum
-
-# env file
+# Secret files
 .env
+config/settings_local.py  # If using local settings overrides
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Migrations (optional: keep initial migrations)
+**/migrations/*.pyc
+**/migrations/*.pyo
+**/migrations/*.log
+
+# Byte-compiled and cache files
+*.pyc
+*.pyo
+__pycache__/
+
+# Docker
+docker-compose.override.yml
+*.dockerfile
+
+# Node.js (for frontend integration)
+node_modules/
+npm-debug.log
+yarn.lock
+package-lock.json
+
+# VS Code settings
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.pycover
+.hypothesis/
+
+# Pytest
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
